@@ -1,10 +1,14 @@
 {% extends "layout.html" %}
 {% block content %}
+
+    <!-- Title -->
     <div class="content-section">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Reset Password</legend>
+
+                <!-- Email Request -->
                 <div class="form-group">
                     {{ form.email.label(class="form-control-label") }}
                     {% if form.email.errors %}
@@ -19,6 +23,8 @@
                     {% endif %}
                 </div>
             </fieldset>
+
+            <!-- Request Button -->
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>

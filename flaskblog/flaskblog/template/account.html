@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
+
+<!-- Username/Email in the header -->
     <div class="content-section">
       <div class="media">
         <img class="rounded-circle account-img" src="{{ image_file }}">
@@ -8,10 +10,14 @@
           <p class="text-secondary">{{ current_user.email }}</p>
         </div>
       </div>
+
+      <!-- Title - Account Info -->
         <form method="POST" action="" enctype="multipart/form-data">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Account Info</legend>
+
+                <!-- Username -->
                 <div class="form-group">
                     {{ form.username.label(class="form-control-label") }}
 
@@ -26,6 +32,8 @@
                         {{ form.username(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+
+                <!-- Email -->
                 <div class="form-group">
                     {{ form.email.label(class="form-control-label") }}
                     {% if form.email.errors %}
@@ -39,6 +47,8 @@
                         {{ form.email(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+
+                <!-- Update Profile Picture  -->
                 <div class="form-group">
                     {{ form.picture.label() }}
                     {{ form.picture(class="form-control-file") }}
@@ -49,6 +59,8 @@
                     {% endif %}
                 </div>
             </fieldset>
+
+            <!-- Update Button -->
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>
